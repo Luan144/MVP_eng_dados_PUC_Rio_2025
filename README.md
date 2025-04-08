@@ -10,22 +10,65 @@
 
 ## Catálogo de dados:
 
-#### codigo_emenda [str]: Identificador da emenda parlamentar, composto por 12 dígitos: 4 do ano da emenda + 4 do código do autor + 4 do número da emenda do autor.
+### Campos da Tabela de Emendas Parlamentares
 
-#### ano_emenda [int]: Ano em que emenda foi proposta. Os valores vão de 2021 a 2024 de forma contínua.
+- **`codigo_emenda` [str]**  
+  Identificador da emenda parlamentar, composto por 12 dígitos:  
+  - 4 do ano da emenda  
+  - 4 do código do autor  
+  - 4 do número da emenda do autor
 
-#### tipo_emenda [str]: Descreve o tipo de emenda parlamentar. Sus categorias são: "Emenda Individual - Transferências com Finalidade Definida"; "Emenda Individual - Transferências Especiais"; "Emenda de Bancada"; "Emenda de Comissão"; "Emenda de Relator".
+- **`ano_emenda` [int]**  
+  Ano em que a emenda foi proposta.  
+  Valores possíveis: **2021 a 2024** (de forma contínua)
 
-#### nome_autor [str]: Nome do autor da emenda parlamentar, conforme registrado no Sistema de Administração Financeira do Governo Federal - SIAFI.
+- **`tipo_emenda` [str]**  
+  Descreve o tipo de emenda parlamentar. As categorias são:  
+  - *Emenda Individual - Transferências com Finalidade Definida*  
+  - *Emenda Individual - Transferências Especiais*  
+  - *Emenda de Bancada*  
+  - *Emenda de Comissão*  
+  - *Emenda de Relator*
 
-#### local_destino [str]: Atributo do Plano de Trabalho que indica, durante a execução da despesa, a região onde a despesa ocorre. Os valores dessa categoria podem ser: nome do município em letras mísculas seguido da UF (exemplo: "COTIA - SP"); apenas nome do estado em letras maiúsculas seguido de "(UF)" (exemplo: "PARANÁ (UF)"); "Múltiplo" quando a emenda abrange diversas localidades; "Nacional" quando a emenda abrange todo o território nacional. 
+- **`nome_autor` [str]**  
+  Nome do autor da emenda parlamentar, conforme registrado no SIAFI (Sistema de Administração Financeira do Governo Federal).
 
-#### municipio [str]: Nome do município de destinação do recurso. Os valores dessa categoria podem ser: nome do município em letras maiúsculas (exemplo: "JOÃO PESSOA"); "Múltiplo"; "Sem informação".
+- **`local_destino` [str]**  
+  Indica a região onde a despesa ocorre, segundo o Plano de Trabalho.  
+  Exemplos de valores:  
+  - `"cotia - SP"`  
+  - `"PARANÁ (UF)"`  
+  - `"Múltiplo"`  
+  - `"Nacional"`
 
-#### uf [str]: 	Nome do estado de destinação do recurso. Este campo poderá estar sem informação, a depender da localidade de aplicação. Os valores dessa categoria podem ser: nome da unidade federativa em letras maiúsculas (exemplo: "RIO DE JANEIRO")
+- **`municipio` [str]**  
+  Nome do município de destinação do recurso.  
+  Exemplos de valores:  
+  - `"JOÃO PESSOA"`  
+  - `"Múltiplo"`  
+  - `"Sem informação"`
 
-#### regiao [str]: Região de destinação do recurso. Os valores dessa categoria podem ser: nome da região com primeira letra maiúscula (exemplo: "Nordeste"); "Múltiplo"; "Nacional"; "Exterior".
+- **`uf` [str]**  
+  Nome do estado de destinação do recurso.  
+  Pode estar em branco em alguns casos.  
+  Exemplos de valores:  
+  - `"RIO DE JANEIRO"`  
+  - *em branco*
 
-#### subfuncao [str]: Nome da subfunção em que foi classificada a despesa associada à emenda parlamentar. Os valores dessa categoria podem ser: nome da subfunção iniciando com letra maiúscula (exemplo: "Atenção básica").
+- **`regiao` [str]**  
+  Região de destinação do recurso.  
+  Exemplos de valores:  
+  - `"Nordeste"`  
+  - `"Múltiplo"`  
+  - `"Nacional"`  
+  - `"Exterior"`
 
-#### valor_empenhado [float64]: Valor empenhado para a emenda. Reserva de valores monetários autorizados para atender um fim específico. Valores máximo e mínimo respectivamente (com casas decimais separadas por "."): 10,058,950,760.11 e 2,633.0.
+- **`subfuncao` [str]**  
+  Nome da subfunção orçamentária associada à emenda parlamentar.  
+  Exemplo de valor: `"Atenção básica"`
+
+- **`valor_empenhado` [float64]**  
+  Valor empenhado (reserva de recursos autorizada para uma despesa específica).  
+  Valores possíveis (em reais):  
+  - Mínimo: `2,633.0`  
+  - Máximo: `10,058,950,760.11`
